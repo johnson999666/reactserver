@@ -1,0 +1,125 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+    <title>Document</title>
+
+    <%- include('partials/header') %>
+</head>
+<body>
+      <!--the main title h1-->
+      <div class="first">
+  <h1>Mastering Code, <br>Delivering Solutions</h1> 
+  <h6> I have strong skills in Python, React.js, JavaScript, and CSS. I'm experienced in developing applications with Python frameworks such as Flask and Django. I can create interactive and user-friendly front-end interfaces with React.js, and I have knowledge of core JavaScript concepts and libraries like Node.js. With my CSS skills and knowledge of frameworks like Bootstrap and Materialize CSS, I can build responsive and visually appealing web designs.</h6>
+  </div>
+ <!--the main title h1-->
+
+  <!--2nd big centered title-->
+  
+  <div class="center-container">
+    <h1 class="center-text"> Experienced Programmer<br>with<br>Advanced Skills</h1>
+   </div>
+
+ <!--2nd big centered title-->
+
+
+ <div class="wrapper">
+  <div class="box">
+    <h1 class="a">Python Programming</h1>
+    <h6 class="b">A Python programmer is skilled in writing and debugging Python code, utilizing libraries and frameworks to develop applications.</h6>
+    <h6 class="url"><a class="my-link" href="https://www.google.com">The Python Page</a></h6>
+  </div>
+  <div class="box">
+    <div><img src="python.jpeg" alt="computer" class="python"></div>
+  </div>
+</div>
+
+
+<div class="wrapper1">
+  <div class="flexbox1">
+    
+    <div class="box1">
+      <h3>Box 1b</h3>
+      <p class="in">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+  <div class="flexbox1">
+    <div class="box1">
+      <ul class="my-list">
+        <li>
+          <h2>Title 1</h2>
+          <p>Item 1 description goes here.</p>
+        </li>
+        <li>
+          <h2>Title 2</h2>
+          <p>Item 2 description goes here.</p>
+        </li>
+       
+      </ul>
+      
+    </div>
+    
+  </div>
+</div>
+
+
+  
+  
+
+ 
+
+      
+      <div class="change-color"></div>
+      <script>
+        const changeColorDiv = document.querySelector('.change-color');
+        let isPastChangeColorDiv = false;
+  
+        window.addEventListener('scroll', function() {
+          const body = document.querySelector('body');
+          const scrollY = window.scrollY;
+  
+          // Check if user has scrolled past the changeColorDiv
+          if (!isPastChangeColorDiv && scrollY > changeColorDiv.offsetTop + changeColorDiv.offsetHeight) {
+            isPastChangeColorDiv = true;
+            body.style.backgroundColor = 'rgb(124, 181, 181)';
+          }
+  
+          // Check if user has scrolled back up past the changeColorDiv
+          if (isPastChangeColorDiv && scrollY <= changeColorDiv.offsetTop) {
+            isPastChangeColorDiv = false;
+            body.style.backgroundColor = '#fff';
+          }
+        });
+      </script>
+
+
+<div class="first">
+<h1 class="z">This is the first of Many</h1> 
+  <h6 class="words url-padding z"> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+</div>
+
+
+
+
+
+
+
+
+<script src="index.js"></script>
+</body>
+</html>
+
+
+  
+  <%- include('partials/footer') %>

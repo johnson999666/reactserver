@@ -1,0 +1,100 @@
+
+
+<style>
+
+
+
+  .c { font-family: 'Open Sans', sans-serif;}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .flex-item {
+    flex: 1 0 100%; /* Each item takes up the full width of the container */
+    height: 400px; /* Set the height of each item */
+    background-color: white;
+    
+  }
+  
+  @media (min-width: 768px) {
+    .flex-item {
+      flex-basis: calc(50% - 20px); /* Each item takes up 50% of the container's width with some margin */
+      
+    }
+  
+    .flex-item:last-child {
+      margin-right: 0; /* Remove the margin from the last item to prevent overflow */
+    }
+  }
+  /* Each item takes up the full width of the container */
+    .c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(124, 181, 181);
+    }
+    ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+  }
+li {
+    padding: 20px;
+}
+.b {
+    font-size: 20px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .b {
+      font-size: 26px;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .b {
+      font-size: 32px;
+    }
+  }
+
+
+.d {
+    text-align: center;
+}
+
+.e {
+    align-items: center;
+    justify-content: center;
+}
+
+.f {
+   
+    margin: 60px;
+    font-size: 50px;
+}</style>
+
+
+
+<div class="flex-container">
+    <div class="flex-item c"> 
+         <div class="e">
+            <div class="f">list item</div>
+            <div class="f">list item</div>
+            <div class="f">list item</div>
+        </div>
+        <div class="e">
+            <div class="f">list item</div>
+            <div class="f">list item</div>
+            <div class="f">list item</div>
+        </div>
+    </div>
+    <div class="flex-item c">
+        <ul>
+            <li class="b d">
+                jamesmleppo@gmail.com</li>
+            
+          </ul>
+    </div>
+</div>

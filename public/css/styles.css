@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+}
+
+/*the main title -----------------*/ 
+h1 {
+  font-size: 7vw;
+  margin: 0;
+  padding: 0;
+  color: black;
+  padding-left: 40px;
+}
+
+.first {
+  background-color: rgb(124, 181, 181);
+  padding-bottom: 100px;
+}
+
+h6 {
+  padding: 0;
+  width: 70%;
+}
+
+h6 {
+  padding-left: 40px;
+  font-size: 2.5vw;
+  
+}
+
+/* the centered big title */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-text {
+  align-items: center;
+  text-align: center;
+  padding-bottom: 75px;
+}
+
+/* flexboxes 2 divs side by side*/
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1;
+  margin: 0px;
+  padding: 0px;
+  width: 800px;
+  height: 700px;
+  
+  
+}
+.python {
+  width: 700px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  
+  
+
+}
+
+.python {
+  max-width: 100%;
+  height: auto;
+  margin-top: 150px;
+}
+
+/* Media query for small screens */
+@media only screen and (max-width: 480px) {
+  .python {
+    max-width: 6vw; /* Reduce the maximum width of the image on small screens */
+  }
+}
+
+.url {
+  margin: 0;
+  margin-left: 40px;
+  padding: 0;
+}
+.pic {
+  background-image: url('pic1.jpeg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%; /* Set the height of the div as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow to the box */
+  padding: 20px; /* Add some padding to the box to create space between content and shadow */
+}
+
+.wrapper1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flexbox1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.box1 {
+  flex: 1;
+  margin-bottom: 20px;
+  
+  padding: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .flexbox1 {
+    width: 50%;
+  }
+}
+.my-list {
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  height: 300px;
+  margin-left: 40px;
+}
+
+h3 {
+  font-size: 7vh;
+  margin-left: 40px;
+}
+
+.in {
+  font-size: 5vh;
+  margin-left: 40px;
+}
+
+
+

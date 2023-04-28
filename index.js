@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
@@ -29,6 +29,6 @@ app.get('/second', (req, res) => {
 
 
 
-app.listen(8080, "0.0.0.0", () => {
+app.listen(process.env.PORT ||8080, "0.0.0.0", () => {
   console.log('Server listening on port 3000');
 });

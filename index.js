@@ -6,6 +6,7 @@ const app = express();
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
+const io = require('socket.io')(server);
 
 
 
@@ -26,7 +27,22 @@ app.get('/second', (req, res) => {
   res.render('second', { name: 'World' });
 });
 
+app.get('/third', (req, res) => {
+  res.sendFile('second', { name: 'World' });
+});
 
+io.on('connection', (socket) => {
+  console.log('User connected');
+
+  socket.on('chat message', (msg) => {
+    console.log('Message: ' + msg);
+    io.emit('chat message', msg);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
 
 
 app.listen(process.env.PORT ||8080, "0.0.0.0", () => {

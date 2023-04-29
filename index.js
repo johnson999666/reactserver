@@ -30,8 +30,9 @@ app.get('/second', (req, res) => {
 });
 
 app.get('/third', (req, res) => {
-  res.sendFile('third', { name: 'World' });
+  res.render('third', { name: 'World' });
 });
+
 
 io.on('connection', (socket) => {
   console.log('User connected');

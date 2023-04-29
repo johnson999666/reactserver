@@ -28,7 +28,7 @@ app.get('/second', (req, res) => {
 });
 
 app.get('/third', (req, res) => {
-  res.sendFile('second', { name: 'World' });
+  res.sendFile('third', { name: 'World' });
 });
 
 io.on('connection', (socket) => {

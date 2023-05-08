@@ -1,50 +1,55 @@
-require('dotenv').config();
 const express = require('express');
-const app = express();
-const http = require('http');
-const server = http.createServer(app);
 
-// Serve static files from the 'public' directory
+const fetch = require('node-fetch');
+
+
+
+const app = express();
 app.use(express.static('public'));
 
+
+
 app.set('view engine', 'ejs');
-const io = require('socket.io')(server);
-
-
-
 
 app.get('/', (req, res) => {
-  res.render('index', { name: 'World' });
+  const city = req.query.city || 'New York';
+  const apiKey = 'c740b141159dc93d62c32a163b009d37';
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      const temperature = data.main.temp;
+      const description = data.weather[0].description;
+      const weather = new Weather({
+        city,
+        temperature,
+      });
+      weather.save();
+      res.render('index', { city, temperature, description });
+    })
+    .catch(error => {
+      console.log(error);
+      res.render('error');
+    });
 });
 
-app.get('/first', (req, res) => {
-  res.render('first', { name: 'World' });
-});
-
-app.get('/me', (req, res) => {
-  res.render('me', { name: 'World' });
-});
-
-app.get('/second', (req, res) => {
-  res.render('second', { name: 'World' });
-});
-
-app.get('/third', (req, res) => {
-  res.render('third', { name: 'World' });
-});
-
-
-io.on('connection', (socket) => {
-  console.log('User connected');
-
-  socket.on('chat message', (msg) => {
-    console.log('Message: ' + msg);
-    io.emit('chat message', msg);
-  });
-
-  socket.on('disconnect', () => {
-    console.log('User disconnected');
-  });
+app.post('/weather', async (req, res) => {
+  const city = req.body.city;
+  const apiKey = 'c740b141159dc93d62c32a163b009d37';
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
+  const data = await response.json();
+  if (data.cod === '404') {
+    console.log(data.message); // log the error message
+    res.render('error', { message: 'City not found. Please try again.' });
+  } else {
+    const temperature = data.main.temp;
+    const description = data.weather[0].description;
+    const weather = new Weather({
+      city,
+      temperature,
+    });
+    weather.save();
+    res.render('weather', { city, temperature, description });
+  }
 });
 
 
